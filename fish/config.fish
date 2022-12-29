@@ -10,34 +10,12 @@ set -g theme_hide_hostname no
 set -g theme_hostname always
 
 # aliases
+alias c "clear"
 alias ls "ls -p -G"
 alias la "ls -A"
 alias ll "ls -l"
 alias lla "ll -A"
 alias g git
-alias ra='ranger'
-alias v='nvim'
-alias vi='nvim'
-alias vim='nvim'
-alias c='clear'
-alias l='ls -l'
-alias tnew='tmux new -s'
-alias twnew='tmux new-window -n'
-alias tkill='tmux kill-session -t'
-alias twkill='tmux kill-window -t'
-alias ta='tmux a -t'
-alias twls='tmux list-windows'
-alias tls='tmux ls'
-alias rm='trash'
-
-ulimit -c unlimited
-
-# http proxy
-#set -g https_proxy=http://127.0.0.1:10080;
-#set -g http_proxy=http://127.0.0.1:10080;
-#set -g all_proxy=socks5://127.0.0.1:10080;
-
-
 
 command -qv nvim && alias vim nvim
 
@@ -53,11 +31,6 @@ set -gx PATH node_modules/.bin $PATH
 # Go
 set -g GOPATH $HOME/go
 set -gx PATH $GOPATH/bin $PATH
-
-
-# Shell
-set -g MYSHELL_HOME /Users/jacky/shell
-set -gx PATH $MYSHELL_HOME $PATH
 
 # NVM
 function __check_rvm --on-variable PWD --description 'Do nvm stuff'
