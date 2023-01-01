@@ -10,7 +10,7 @@ capabilities = require('cmp_nvim_lsp').default_capabilities(capabilities)
 
 local servers = {
   -- clangd = {},
-  -- gopls = {},
+  gopls = {},
   pyright = {},
   -- rust_analyzer = {},
   tsserver = {},
