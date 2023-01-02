@@ -1,13 +1,12 @@
 require('jacky.base')
 require("jacky.themes")
-require("jacky.icons")
 require('jacky.keymaps')
 require('jacky.highlights')
 require('jacky.plugins')
--- require('jacky.toggleterm')
--- require('jacky.lualine')
--- require('jacky.nvim-tree')
--- require('jacky.bufferline')
+require('jacky.toggleterm')
+require('jacky.lualine')
+require('jacky.nvim-tree')
+require('jacky.bufferline')
 
 local has = vim.fn.has
 local is_mac = has "maxunix"

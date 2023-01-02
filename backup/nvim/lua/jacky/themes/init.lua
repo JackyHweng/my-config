@@ -1,0 +1,4 @@
+-- require('AGou.themes.nightfox')
+-- require('AGou.themes.catppuccin')
+--
+-- colorscheme gruvbox-materia
