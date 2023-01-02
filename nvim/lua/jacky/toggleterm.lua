@@ -214,4 +214,13 @@ function _HORIZONTAL_TERM()
 end
 
 vim.api.nvim_set_keymap("n", "<leader>3", "<cmd>lua _HORIZONTAL_TERM()<CR>", { noremap = true, silent = true })
-vim.api.nvim_set_keymap("i", "<leader>3", "<cmd>lua _HORIZONTAL_TERM()<CR>", { noremap = true, silent = true })
+-- vim.api.nvim_set_keymap("i", "<A-3>", "<cmd>lua _HORIZONTAL_TERM()<CR>", { noremap = true, silent = true })
+
+
+-- vim.api.nvim_set_keymap("n", "<leader>tt", "<cmd>lua _LAZYGIT_TOGGLE()<CR>", { noremap = true, silent = true })
+-- ========= toggleterm settings ==========
+-- By applying the mappings this way you can pass a count to your
+-- mapping to open a specific window.
+-- For example: 2<C-t> will open terminal 2
+-- keymap.set('n', '<silent><leader>tt', '<Cmd>exe v:count1 . "ToggleTerm"<CR>')
+-- keymap.set('n', '<silent><leader>gg', '<Cmd>lua _LAZYGIT_TOGGLE()<CR>')

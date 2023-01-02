@@ -1,5 +1,11 @@
 local keymap = vim.keymap
 
+-- -- [[ Basic Keymaps ]]
+-- -- Set <space> as the leader key
+-- -- See `:help mapleader`
+-- --  NOTE: Must happen before plugins are required (otherwise wrong leader will be used)
+vim.g.mapleader = ' '
+vim.g.maplocalleader = ' '
 
 
 keymap.set('n', '<C-c>', '<Nop>')
@@ -24,7 +30,7 @@ keymap.set('n', 'te', ':tabedit')
 keymap.set('n', 'ss', ':split<Return><C-w>w')
 keymap.set('n', 'sv', ':vsplit<Return><C-w>w')
 -- Move window
-keymap.set('n', '<Space>', '<C-w>w')
+-- keymap.set('n', '<Space>', '<C-w>w')
 keymap.set('', 'sh', '<C-w>h')
 keymap.set('', 'sk', '<C-w>k')
 keymap.set('', 'sj', '<C-w>j')
@@ -36,15 +42,9 @@ keymap.set('n', '<C-w><right>', '<C-w>>')
 keymap.set('n', '<C-w><up>', '<C-w>+')
 keymap.set('n', '<C-w><down>', '<C-w>-')
 
--- tree toggle mapping
+-- Nvimtree setting
 keymap.set('n', '<C-n>', ':NvimTreeToggle<CR>')
 
-
--- ========= toggleterm settings ==========
--- By applying the mappings this way you can pass a count to your
--- mapping to open a specific window.
--- For example: 2<C-t> will open terminal 2
-keymap.set('n', '<silent><leader>tt', '<Cmd>exe v:count1 . "ToggleTerm"<CR>')
-keymap.set('n', '<silent><leader>gg', '<Cmd>lua _LAZYGIT_TOGGLE()<CR>')
--- inoremap <silent><leader>tt <Esc><Cmd>exe v:count1 . "ToggleTerm"<CR>
--- nnoremap <silent><leader>gg <Cmd>lua _LAZYGIT_TOGGLE()<CR
+-- Toggleterm setting
+keymap.set('n', '<leader>gg', ':lua _LAZYGIT_TOGGLE()<CR>')
+keymap.set('n', '<leader>tt', ':exe v:count1 . "ToggleTerm"<CR>')

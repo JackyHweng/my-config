@@ -1,7 +1,7 @@
 require('jacky.base')
 require("jacky.themes")
-require('jacky.highlights')
 require('jacky.keymaps')
+require('jacky.highlights')
 require('jacky.plugins')
 require('jacky.toggleterm')
 require('jacky.lualine')
