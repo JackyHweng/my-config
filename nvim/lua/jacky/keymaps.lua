@@ -6,6 +6,7 @@ local keymap = vim.keymap
 -- --  NOTE: Must happen before plugins are required (otherwise wrong leader will be used)
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
+vim.g.user_emmet_leader_key = '<c-y>'
 
 
 keymap.set('n', '<C-c>', '<Nop>')
@@ -19,7 +20,7 @@ keymap.set('n', '-', '<C-x>')
 keymap.set('n', 'dw', 'vb"_d')
 
 -- Select all
---keymap.set('n', '<C-A>', 'gg<S-v>G')
+keymap.set('n', '<C-A>', 'gg<S-v>G')
 
 -- Save with root permission (not working for now)
 --vim.api.nvim_create_user_command('W', 'w !sudo tee > /dev/null %', {})

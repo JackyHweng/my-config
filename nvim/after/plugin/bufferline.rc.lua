@@ -82,3 +82,5 @@ bufferline.setup {
 
 vim.keymap.set('n', '<Tab>', '<Cmd>BufferLineCycleNext<CR>', {})
 vim.keymap.set('n', '<S-Tab>', '<Cmd>BufferLineCyclePrev<CR>', {})
+-- vim.keymap.set('n', 'gx', '<Cmd>BufferLinePickClose<CR>', {})
+vim.api.nvim_set_keymap("n", "<leader>x", ":bdelete %<CR>", { noremap = true, silent = true })

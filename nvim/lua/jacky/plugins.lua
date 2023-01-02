@@ -62,4 +62,6 @@ packer.startup(function(use)
   use { "akinsho/toggleterm.nvim", tag = '*', config = function() --toggleterm
     require("toggleterm").setup()
   end }
+  use 'mattn/emmet-vim'
+  use "Pocco81/AutoSave.nvim"
 end)

@@ -102,9 +102,7 @@ saga.init_lsp_saga {
   -- if you don't use nvim-lspconfig you must pass your server name and
   -- the related filetypes into this table
   -- like server_filetype_map = { metals = { "sbt", "scala" } }
-  server_filetype_map = {
-    typescript = 'typescript'
-  }
+  server_filetype_map = {},
 }
 
 local opts = { noremap = true, silent = true }

@@ -30,7 +30,10 @@ set -gx PATH node_modules/.bin $PATH
 
 # Go
 set -g GOPATH $HOME/go
+# set -g GOPATH /Users/jacky/goland_workspace
+set -g GOBIN $GOPATH/bin
 set -gx PATH $GOPATH/bin $PATH
+
 
 # NVM
 function __check_rvm --on-variable PWD --description 'Do nvm stuff'
