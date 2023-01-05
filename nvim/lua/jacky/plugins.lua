@@ -63,5 +63,5 @@ packer.startup(function(use)
     require("toggleterm").setup()
   end }
   use 'mattn/emmet-vim'
-  use "Pocco81/AutoSave.nvim"
+  use "907th/vim-auto-save"
 end)

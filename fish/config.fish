@@ -15,6 +15,7 @@ alias ls "ls -p -G"
 alias la "ls -A"
 alias ll "ls -l"
 alias lla "ll -A"
+alias n "nvim"
 alias g git
 
 command -qv nvim && alias vim nvim
@@ -24,6 +25,11 @@ set -gx EDITOR nvim
 set -gx PATH bin $PATH
 set -gx PATH ~/bin $PATH
 set -gx PATH ~/.local/bin $PATH
+
+
+# Maven
+set -g MAVEN_HOME /Users/jacky/tools/maven
+set -gx PATH $MAVEN_HOME/bin $PATH
 
 # NodeJS
 set -gx PATH node_modules/.bin $PATH
