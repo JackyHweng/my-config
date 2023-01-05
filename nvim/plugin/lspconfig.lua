@@ -74,7 +74,7 @@ local servers = {
   -- clangd = {},
   -- pyright = {},
   -- rust_analyzer = {},
-  -- tsserver = {},
+  tsserver = {},
 
   gopls = {},
   sumneko_lua = {
@@ -114,7 +114,11 @@ nvim_lsp.flow.setup {
 }
 
 nvim_lsp.tsserver.setup {
-  on_attach = on_attach,
+  -- on_attach = on_attach,
+  on_attach = function(client, bufnr)
+    on_attach(client, bufnr)
+    enable_format_on_save(client, bufnr)
+  end,
   filetypes = { "javascript", "typescript", "typescriptreact", "typescript.tsx" },
   cmd = { "typescript-language-server", "--stdio" },
   capabilities = capabilities

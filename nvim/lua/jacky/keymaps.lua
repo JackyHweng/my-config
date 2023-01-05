@@ -44,7 +44,7 @@ keymap.set('n', '<C-w><up>', '<C-w>+')
 keymap.set('n', '<C-w><down>', '<C-w>-')
 
 -- Nvimtree setting
-keymap.set('n', '<C-n>', ':NvimTreeToggle<CR>')
+keymap.set('n', '<c-n>', ':NvimTreeToggle<CR>')
 
 -- Toggleterm setting
 keymap.set('n', '<leader>gg', ':lua _LAZYGIT_TOGGLE()<CR>')
