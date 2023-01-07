@@ -20,6 +20,14 @@ packer.startup(function(use)
   use 'hrsh7th/cmp-buffer' -- nvim-cmp source for buffer words
   use 'hrsh7th/cmp-nvim-lsp' -- nvim-cmp source for neovim's built-in LSP
   use 'hrsh7th/nvim-cmp' -- Completion
+  use 'hrsh7th/cmp-path'
+  use 'hrsh7th/cmp-cmdline'
+  use {
+    "ray-x/lsp_signature.nvim",
+  }
+  -- use 'hrsh7th/cmp-nvim-lsp-signature-help'
+
+
   use 'neovim/nvim-lspconfig' -- LSP
   use 'jose-elias-alvarez/null-ls.nvim' -- Use Neovim as a language server to inject LSP diagnostics, code actions, and more via Lua
   use 'williamboman/mason.nvim'
@@ -63,5 +71,15 @@ packer.startup(function(use)
     require("toggleterm").setup()
   end }
   use 'mattn/emmet-vim'
-  use "907th/vim-auto-save"
+  -- use "907th/vim-auto-save"
+  use {
+    'stevearc/aerial.nvim',
+    config = function() require('aerial').setup() end
+  }
+
+  -- which key
+  use {
+    'AckslD/nvim-whichkey-setup.lua',
+    requires = { 'liuchengxu/vim-which-key' },
+  }
 end)

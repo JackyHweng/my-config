@@ -5,6 +5,41 @@ if (not status) then return end
 
 local protocol = require('vim.lsp.protocol')
 
+-- lsp_signature start
+-- fix_pos = function(signatures, lspclient)
+--   if signatures[1].activeParameter >= 0 and #signatures[1].parameters == 1 then
+--     return false
+--   end
+--   if lspclient.name == 'sumneko_lua' then
+--     return true
+--   end
+--   return false
+-- end
+-- -- cfg = {…}  -- add you config here
+-- local cfg = {
+--   floating_window_off_x = 5, -- adjust float windows x position.
+--   floating_window_off_y = function() -- adjust float windows y position. e.g. set to -2 can make floating window move up 2 lines
+--     local linenr = vim.api.nvim_win_get_cursor(0)[1] -- buf line number
+--     local pumheight = vim.o.pumheight
+--     local winline = vim.fn.winline() -- line number in the window
+--     local winheight = vim.fn.winheight(0)
+--
+--     -- window top
+--     if winline - 1 < pumheight then
+--       return pumheight
+--     end
+--
+--     -- window bottom
+--     if winheight - winline < pumheight then
+--       return -pumheight
+--     end
+--     return 0
+--   end,
+-- }
+-- require "lsp_signature".setup(cfg)
+-- lsp_signature end
+
+
 local augroup_format = vim.api.nvim_create_augroup("Format", { clear = true })
 local enable_format_on_save = function(_, bufnr)
   vim.api.nvim_clear_autocmds({ group = augroup_format, buffer = bufnr })
@@ -34,7 +69,9 @@ local on_attach = function(client, bufnr)
   buf_set_keymap('n', 'gd', '<Cmd>lua vim.lsp.buf.definition()<CR>', opts)
   buf_set_keymap('n', 'gi', '<cmd>lua vim.lsp.buf.implementation()<CR>', opts)
   buf_set_keymap('n', 'K', '<Cmd>lua vim.lsp.buf.hover()<CR>', opts)
+
 end
+
 
 protocol.CompletionItemKind = {
   '', -- Text
@@ -75,6 +112,7 @@ local servers = {
   -- pyright = {},
   -- rust_analyzer = {},
   tsserver = {},
+  vuels = {},
 
   gopls = {},
   sumneko_lua = {
@@ -107,6 +145,7 @@ mason_lspconfig.setup_handlers {
 }
 -- Set up completion using nvim_cmp with LSP source
 local capabilities = require('cmp_nvim_lsp').default_capabilities()
+capabilities.textDocument.completion.completionItem.snippetSupport = true
 
 nvim_lsp.flow.setup {
   on_attach = on_attach,
@@ -123,6 +162,68 @@ nvim_lsp.tsserver.setup {
   cmd = { "typescript-language-server", "--stdio" },
   capabilities = capabilities
 }
+
+nvim_lsp.emmet_ls.setup({
+  -- on_attach = on_attach,
+  capabilities = capabilities,
+  filetypes = { 'html', 'typescriptreact', 'javascriptreact', 'css', 'sass', 'scss', 'less', 'vue' },
+  init_options = {
+    html = {
+      options = {
+        -- For possible options, see: https://github.com/emmetio/emmet/blob/master/src/config.ts#L79-L267
+        ["bem.enabled"] = true,
+      },
+    },
+  }
+})
+
+-- vue
+nvim_lsp.vuels.setup({
+  -- on_attach = on_attach,
+  on_attach = function(client, bufnr)
+    on_attach(client, bufnr)
+    enable_format_on_save(client, bufnr)
+  end,
+  filetypes = { "vue" },
+  cmd = { "vls" },
+  capabilities = capabilities,
+  config = {
+    css = {},
+    emmet = {},
+    html = {
+      suggest = {}
+    },
+    javascript = {
+      format = {}
+    },
+    stylusSupremacy = {},
+    typescript = {
+      format = {}
+    },
+    vetur = {
+      completion = {
+        autoImport = false,
+        tagCasing = "kebab",
+        useScaffoldSnippets = false
+      },
+      format = {
+        defaultFormatter = {
+          js = "none",
+          ts = "none"
+        },
+        defaultFormatterOptions = {},
+        scriptInitialIndent = false,
+        styleInitialIndent = false
+      },
+      useWorkspaceDependencies = false,
+      validation = {
+        script = true,
+        style = true,
+        template = true
+      }
+    }
+  }
+})
 
 nvim_lsp.gopls.setup {
   on_attach = on_attach,

@@ -4,6 +4,8 @@ require("jacky.icons")
 require('jacky.keymaps')
 require('jacky.highlights')
 require('jacky.plugins')
+require("jacky.conf.aerial")
+require("jacky.conf.which-key")
 
 local has = vim.fn.has
 local is_mac = has "maxunix"
