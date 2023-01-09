@@ -18,6 +18,7 @@ packer.startup(function(use)
   use 'nvim-lua/plenary.nvim' -- Common utilities
   use 'onsails/lspkind-nvim' -- vscode-like pictograms
   use 'hrsh7th/cmp-buffer' -- nvim-cmp source for buffer words
+  use { "saadparwaiz1/cmp_luasnip", commit = "a9de941bcbda508d0a45d28ae366bb3f08db2e36" } -- snippet completions
   use 'hrsh7th/cmp-nvim-lsp' -- nvim-cmp source for neovim's built-in LSP
   use 'hrsh7th/nvim-cmp' -- Completion
   use 'hrsh7th/cmp-path'
@@ -82,4 +83,10 @@ packer.startup(function(use)
     'AckslD/nvim-whichkey-setup.lua',
     requires = { 'liuchengxu/vim-which-key' },
   }
+
+  -- autocomplete source
+  use {
+    'David-Kunz/cmp-npm',
+  }
+  -- end autocomplete end
 end)
