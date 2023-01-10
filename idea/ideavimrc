@@ -1,0 +1,396 @@
+let mapleader=" "
+
+" Base Config
+" Cursor Movement
+
+" W/B keys for 6 times w/b
+noremap W 5w
+noremap B 5b
+
+vnoremap H ^
+vnoremap L $
+map L $
+map H ^
+
+set laststatus=2
+set autochdir
+set showcmd
+set wildmenu
+
+set noerrorbells
+set vb t_vb=
+
+" Press space twice to jump to the next '<++>' and edit it
+map <LEADER><LEADER> <Esc>g/TODO<CR>:nohlsearch<CR><Esc>c4l
+
+" Ctrl + J or K will more up/down the view point withiout moveing the cusor
+
+" Delete a word backwards
+nnoremap dw vb"_d'
+nnoremap cw vb"_c
+
+" save & quit
+map Q :q<CR>
+map S :w<CR>
+
+"===
+"===  Main Code Display
+"===
+set number
+set relativenumber
+set ruler
+set cursorline
+syntax enable
+syntax on
+
+"===
+"===  Editor Behavior
+"===
+set expandtab
+set tabstop=2
+set shiftwidth=2
+set softtabstop=2
+set list
+set listchars=tab:▸\ ,trail:▫
+set scrolloff=5
+
+" window behaviors
+map sh : set splitright<CR>:vsplit<CR>
+" map sh : set nosplitright<CR>:vsplit<CR>
+map ss : set nosplitbelow<CR>:split<CR>
+" map sj : set splitbelow<CR>:split<CR>
+map <Leader>l <C-w>l
+map <Leader>k <C-w>k
+map <Leader>h <C-w>h
+map <Leader>j <C-w>j
+map <up> :res +5<CR>
+map <down> :res -5<CR>
+map <left> :vertical resize-5<CR>
+map <right> :vertical resize+5<CR>
+
+" Status/ command bar
+
+set laststatus=2
+set autochdir
+set showcmd
+set wildmenu
+
+" searching opitions
+set hlsearch
+exec "nohlsearch"
+set incsearch
+set ignorecase
+set ic
+set smartcase
+set nocompatible
+
+" Restore Cursor Position
+au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
+
+
+" ===
+" === System
+" ===
+filetype on
+filetype indent on
+filetype plugin on
+filetype plugin indent on
+set mouse=a
+set encoding=utf-8
+let &t_ut=''
+set indentexpr=
+set backspace=indent,eol,start
+set foldmethod=indent
+set foldlevel=99
+
+
+" 在插入模式下光标会变成细条
+let &t_SI = "\<Esc>]50;CursorShape=1\x7"
+let &t_SR = "\<Esc>]50;CursorShape=2\x7"
+let &t_EI = "\<Esc>]50;CursorShape=0\x7"
+
+"  Search
+map <LEADER><CR> :nohlsearch<CR>
+noremap n nzz
+noremap N Nzz
+
+" duplicate words expr
+map <LEADER>fd /\(\<\w\+\>\)\_s*\1
+
+" Spelling Check with <space>sc
+map <LEADER>sc :set spell!<CR>
+
+" hello press z= to correct word
+
+
+" disable the default s key
+map s <nop>
+
+" 随时随地打开配置
+noremap <Leader>rc :e ~/.ideavimrc<CR>
+vnoremap <Leader>rc :e ~/.ideavimrc<CR>
+
+" ======== idea operation ==========
+
+" base operation
+
+noremap <Up> <Nop>
+noremap <Down> <Nop>
+noremap <Left> <Nop>
+noremap <Right> <Nop>
+
+map s <nop>
+map R : source ~/.ideavimrc<CR>
+
+" Redo
+noremap U <C-r>
+
+" Quit visual mode
+vnoremap v <Esc>
+
+" easy system clipboard copy/paste
+set clipboard+=unnamed
+
+"===
+"=== idea project window management
+"===
+noremap <Leader>po : action OpenProjectWindows<CR>
+noremap <Leader>pn : action NextProjectWindow<CR>
+noremap <Leader>pN : action PreviousProjectWindow<CR>
+
+
+
+" idea vim plugin
+set NERDTree
+set surround
+set easymotion
+set multiple-cursors
+set ideajoin
+
+"[count]["x]gr{motion}
+"[count]["x]grr
+"{Visual}["x]gr
+set ReplaceWithRegister
+
+" auto select argument, eg:(Long a , Sting<press cia> b),to change agument name, please use 'aa' or 'ia' to select argument
+set argtextobj
+let g:argtextobj_pairs="(:),{:},<:>
+
+" easy to select enrtire text , vie = VggG
+set textobj-entire
+
+" hight light ni select yank text
+set highlightedyank
+let g:highlightedyank_highlight_duration = "1000"
+let g:highlightedyank_highlight_duration = "-1"
+let g:highlightedyank_highlight_color = "rgba(160, 160, 160, 155)"
+
+" end vim plugin
+
+nmap f <Plug>(easymotion-s)
+nmap F <Plug>(easymotion-s)
+" Use uppercase target labels and type as a lower case
+let g:EasyMotion_use_upper = 1
+ " type `l` and match `l`&`L`
+let g:EasyMotion_smartcase = 1
+" Smartsign (type `3` and match `3`&`#`)
+let g:EasyMotion_use_smartsign_us = 1
+
+
+" Insert mode shortcut
+" inoremap <C-h> <Left>
+" inoremap <C-j> <Down>
+" inoremap <C-k> <Up>
+" inoremap <C-l> <Right>
+" inoremap <C-a> <Home>
+" inoremap <C-e> <End>
+" inoremap <C-d> <Delete>
+
+" Window operation
+
+nnoremap <C-a>w <C-W>w
+nnoremap <C-a>x <C-W>c
+nnoremap <C-a>j <C-W>j
+nnoremap <C-a>k <C-W>k
+nnoremap <C-a>h <C-W>h
+nnoremap <C-a>l <C-W>l
+nnoremap <C-a>- <C-W>s
+nnoremap <C-a>\| <C-W>v
+
+" Tab operation
+noremap K gt
+noremap J gT
+
+
+" ==================================================
+" Show all the provided actions via `:actionlist`
+" ==================================================
+
+" moving
+" noremap [m :<C-u>action MethodUp<CR>
+" noremap ]m :<C-u>action MethodDown<CR>
+" noremap [c :<C-u>action VcsShowPrevChangeMarker<CR>
+" noremap ]c :<C-u>action VcsShowNextChangeMarker<CR>
+" noremap [e :<C-u>action GotoPreviousError<CR>
+" noremap ]e :<C-u>action GotoNextError<CR>
+
+" built in search looks better
+noremap / :action Find<CR>
+" but preserve ideavim search
+nnoremap g/ /
+
+" new file operation
+noremap <Leader>touch :action NewFile<CR>
+noremap <Leader>rf :action RenameFile<CR>
+noremap <Leader>nc :action NewClass<CR>
+nnoremap <Leader>nc :action NewClass<CR>
+
+nnoremap <Leader>np :action NewPythonFile<CR>
+"  means new package
+nnoremap <Leader>nd :action NewDir<CR>
+nnoremap <Leader>npi :action NewPackageInfo<CR>
+" 通用的选择新建的文件类型
+nnoremap <Leader>ns :action NewScratchFile<CR>
+nnoremap <Leader>o :action OpenFile<CR>
+
+
+" view
+noremap <Leader>ap :action ActivateProjectToolWindow<CR>
+noremap <Leader>ac :action ActivateTerminalToolWindow<CR>
+noremap <Leader>ad :action ActivateDebugToolWindow<CR>
+noremap <Leader>am :action ActivateMavenToolWindow<CR>
+noremap <Leader>at :action ActivateTODOToolWindow<CR>
+noremap <Leader>av :action ActivateVersionControlToolWindow<CR>
+
+" leetcode
+noremap <Leader>al :action ActivateleetcodeToolWindow<CR>
+noremap <Leader>aa :action ActivateleetcodeToolWindow<CR>
+nnoremap <Leader>lc :action leetcode.RunCodeAction<CR>
+nnoremap <Leader>ls :action leetcode.SubmitAction<CR>
+
+
+noremap <Leader>cv :action ChangeView<CR>
+noremap gx :action HideAllWindows<CR>
+noremap <Leader>gm :action MaximizeActiveDialog<CR>
+
+" console view operation
+noremap <Leader>c :action ConsoleView.ClearAll<CR>
+
+
+" Git operation
+noremap <Leader>gb :action Git.Branches<CR>
+noremap <Leader>gp :action Git.Pull<CR>
+noremap <Leader>gP :action Vcs.Push<CR>
+noremap <Leader>gl :action Git.Log<CR>
+noremap <Leader>gf :action Git.Fetch<CR>
+noremap <Leader>gc :action Git.Commit.And.Push.Executor<CR>
+noremap <Leader>gsc :action Git.Squash.Into.Commit<CR>
+noremap <Leader>guc :action Git.Uncommit<CR>
+
+
+
+
+" code navigation
+nnoremap <Leader>su :action FindUsages<CR>
+nnoremap ga :action GotoAction<CR>
+nnoremap gc :action GotoClass<CR>
+nnnoremap gc :action GotoClass<CR>
+nnoremap gd :action GotoDeclaration<CR>
+nnoremap gf :action GotoFile<CR>
+nnoremap gi :action GotoImplementation<CR>
+nnoremap gs :action GotoSymbol<CR>
+nnoremap <Leader>gt :action GotoTest<CR>
+
+nnoremap [m :action MethodUp<cr>
+nnoremap ]m :action MethodDown<cr>
+
+" built-in navigation to navigated items works better
+nnoremap <c-i> :action Back<cr>
+nnoremap <c-o> :action Forward<cr>
+" but preserve ideavim defaults
+nnoremap g<c-o> <c-o>
+nnoremap g<c-i> <c-i>k
+
+
+
+noremap <leader>sm :action ShowBookmarks<CR>
+noremap <leader>m0 :action ToggleBookmark0<CR>
+noremap <leader>m1 :action ToggleBookmark1<CR>
+noremap <leader>m2 :action ToggleBookmark2<CR>
+noremap <leader>m3 :action ToggleBookmark3<CR>
+noremap <leader>m4 :action ToggleBookmark4<CR>
+noremap <leader>m5 :action ToggleBookmark5<CR>
+noremap <leader>m6 :action ToggleBookmark6<CR>
+noremap <leader>m7 :action ToggleBookmark7<CR>
+noremap <leader>m8 :action ToggleBookmark8<CR>
+noremap <leader>m9 :action ToggleBookmark9<CR>
+
+nnoremap `0 :action GotoBookmark0 <CR>
+nnoremap `1 :action GotoBookmark1 <CR>
+nnoremap `2 :action GotoBookmark2 <CR>
+nnoremap `3 :action GotoBookmark3 <CR>
+nnoremap `4 :action GotoBookmark4 <CR>
+nnoremap `5 :action GotoBookmark5 <CR>
+nnoremap `6 :action GotoBookmark6 <CR>
+nnoremap `7 :action GotoBookmark7 <CR>
+nnoremap `8 :action GotoBookmark8 <CR>
+nnoremap `9 :action GotoBookmark9 <CR>
+
+
+
+" code refactoring 注意重构的要选中模式下
+vnoremap <Leader>re :action RenameElement<CR>
+vnoremap <Leader>iv :action IntroduceVariable<CR>
+vnoremap <Leader>em :action ExtractMethod<CR>
+vnoremap <Leader>y :action CopyReference<CR>
+
+
+" translate
+vnoremap <Leader>tr :action $TranslateAndReplaceAction<CR>
+vnoremap <Leader>tl :action $TranslateTextComponent<CR>
+" vnoremap <Leader>td :action $TranslateDocumentationAction<CR>
+
+nnoremap <Leader>ef :action RecentFiles<CR>
+
+
+
+noremap <Leader>;; :action CommentByLineComment<CR>
+
+noremap <Leader>aa :action Annotate<CR>
+noremap <Leader>bb :action ToggleLineBreakpoint<CR>
+noremap <Leader>vb :action ViewBreakpoints<CR>
+noremap <Leader>cd :action ChooseDebugConfiguration<CR>
+noremap <Leader>cr :action ChooseRunConfiguration<CR>
+noremap gp :action FileStructurePopup<CR>
+noremap <Leader>ic :action InspectCode<CR>
+noremap goi :action OptimizeImports<CR>
+noremap moi :action Maven.Reimport<CR>
+" 当你想不起命令的时候可以使用这个
+noremap <Leader>pm :action ShowPopupMenu<CR>
+noremap <Leader>rr :action Console.Execute<CR>
+noremap <Leader>R :action Run<CR>
+noremap <Leader>ss :action Stop<CR>
+" double shift
+noremap <Leader>se :action SearchEverywhere<CR>
+
+" ======== debug ==========
+noremap <Leader>mb :action XDebugger.MuteBreakpoints<CR>
+noremap <Leader>si :action StepInto<CR>
+noremap <Leader>tb :action ToggleLineBreakpoint<CR>
+"  is suitable for me ?
+nnoremap i :ForceStepInto
+nnoremap o :ForceStepOver
+nnoremap p :Stepout
+nnoremap n :action ToggleLineBreakpoint<CR>
+nnoremap m :action ToggleMethodBreakpoint<CR>
+nnoremap <CR> :action Resume<CR>
+nnoremap p :action ShowExecutionPoint<CR>
+
+
+noremap <Leader>cp :action Git.Commit.And.Push.Executor<CR>
+let g:multi_cursor_use_default_mapping=0
+
+
+nnoremap <leader>e :NERDTree<CR>
+
+
