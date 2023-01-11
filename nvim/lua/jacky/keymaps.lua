@@ -12,6 +12,10 @@ vim.g.user_emmet_leader_key = '<c-y>'
 keymap.set('n', '<C-c>', '<Nop>')
 keymap.set('n', 'x', '"_x')
 
+
+-- jk mapping Esc
+keymap.set("i", "jk", "<Esc>")
+
 -- Increment/decrement
 keymap.set('n', '+', '<C-a>')
 keymap.set('n', '-', '<C-x>')
@@ -28,14 +32,14 @@ keymap.set('n', '<C-A>', 'gg<S-v>G')
 -- New tab
 keymap.set('n', 'te', ':tabedit')
 -- Split window
-keymap.set('n', 'ss', ':split<Return><C-w>w')
+keymap.set('n', 'sh', ':split<Return><C-w>w')
 keymap.set('n', 'sv', ':vsplit<Return><C-w>w')
 -- Move window
 -- keymap.set('n', '<Space>', '<C-w>w')
-keymap.set('', 'sh', '<C-w>h')
-keymap.set('', 'sk', '<C-w>k')
-keymap.set('', 'sj', '<C-w>j')
-keymap.set('', 'sl', '<C-w>l')
+keymap.set('', '<c-h>', '<C-w>h')
+keymap.set('', '<c-k>', '<C-w>k')
+keymap.set('', '<c-j>', '<C-w>j')
+keymap.set('', '<c-l>', '<C-w>l')
 
 -- Resize window
 keymap.set('n', '<C-w><left>', '<C-w><')
@@ -49,3 +53,11 @@ keymap.set('n', '<leader>e', ':NvimTreeToggle<CR>')
 -- Toggleterm setting
 keymap.set('n', '<leader>gg', ':lua _LAZYGIT_TOGGLE()<CR>')
 keymap.set('n', '<leader>tt', ':exe v:count1 . "ToggleTerm"<CR>')
+
+-- base opt
+keymap.set('n', 'H', '^')
+keymap.set('n', 'L', '$')
+keymap.set('', 'H', '^')
+keymap.set('', 'L', '$')
+
+-- search

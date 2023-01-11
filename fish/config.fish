@@ -17,6 +17,20 @@ alias ll "ls -l"
 alias lla "ll -A"
 alias n "nvim"
 alias g git
+alias tmux 'tmux -2'
+alias ra 'ranger'
+alias vi 'nvim'
+alias vim 'nvim'
+alias c 'clear'
+alias l 'ls -l'
+alias top 'htop'
+alias tnew 'tmux new -s'
+alias twnew 'tmux new-window -n'
+alias tkill 'tmux kill-session -t'
+alias ta 'tmux a -t'
+alias tls 'tmux ls'
+alias rm 'trash'
+alias tar 'gnutar'
 
 command -qv nvim && alias vim nvim
 
@@ -26,6 +40,9 @@ set -gx PATH bin $PATH
 set -gx PATH ~/bin $PATH
 set -gx PATH ~/.local/bin $PATH
 
+# tar gtar
+set -g  TARPATH /usr/local/opt/gnu-tar/libexec/gnubin 
+set -gx PATH TARPATH $PATH
 
 # Maven
 set -g MAVEN_HOME /Users/jacky/tools/maven
@@ -35,7 +52,7 @@ set -gx PATH $MAVEN_HOME/bin $PATH
 set -gx PATH node_modules/.bin $PATH
 
 # Go
-set -g GOPATH $HOME/go
+set -g GOPATH /usr/local/go
 # set -g GOPATH /Users/jacky/goland_workspace
 set -g GOBIN $GOPATH/bin
 set -gx PATH $GOPATH/bin $PATH
