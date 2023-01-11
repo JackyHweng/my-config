@@ -31,6 +31,7 @@ alias ta 'tmux a -t'
 alias tls 'tmux ls'
 alias rm 'trash'
 alias tar 'gnutar'
+alias ws 'webstorm'
 
 command -qv nvim && alias vim nvim
 

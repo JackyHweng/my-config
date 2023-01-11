@@ -59,10 +59,10 @@ map sh : set splitright<CR>:vsplit<CR>
 " map sh : set nosplitright<CR>:vsplit<CR>
 map ss : set nosplitbelow<CR>:split<CR>
 " map sj : set splitbelow<CR>:split<CR>
-map <Leader>l <C-w>l
-map <Leader>k <C-w>k
-map <Leader>h <C-w>h
-map <Leader>j <C-w>j
+map <c-l> <C-w>l
+map <c-k> <C-w>k
+map <c-h> <C-w>h
+map <c-j> <C-w>j
 map <up> :res +5<CR>
 map <down> :res -5<CR>
 map <left> :vertical resize-5<CR>
