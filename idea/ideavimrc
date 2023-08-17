@@ -169,14 +169,17 @@ set NERDTree
 set surround
 set easymotion
 set multiple-cursors
+" you can press J (shift+j) on a line or a selected block of text to join the lines together.
+set idearefactormode=keep
 set ideajoin
+set surround
 
 "[count]["x]gr{motion}
 "[count]["x]grr
 "{Visual}["x]gr
 set ReplaceWithRegister
 
-" auto select argument, eg:(Long a , Sting<press cia> b),to change agument name, please use 'aa' or 'ia' to select argument
+" auto select argument, eg:(Long a , Sting<press cia> b),to change agument name, please use 'vaa' or 'via' to select argument
 set argtextobj
 let g:argtextobj_pairs="(:),{:},<:>
 
@@ -211,8 +214,8 @@ inoremap <C-l> <End>
 " inoremap <C-d> <Delete>
 
 " Tab operation
-noremap K gt
-noremap J gT
+" noremap K gt
+" noremap J gT
 
 
 " ==================================================
@@ -366,6 +369,7 @@ noremap sf :action SearchEverywhere<CR>
 " ======== debug ==========
 noremap <Leader>mb :action XDebugger.MuteBreakpoints<CR>
 noremap <Leader>si :action StepInto<CR>
+noremap <Leader>so :action StepOver<CR>
 noremap <Leader>tb :action ToggleLineBreakpoint<CR>
 "  is suitable for me ?
 nnoremap i :ForceStepInto
