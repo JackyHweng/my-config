@@ -227,8 +227,15 @@ inoremap <C-l> <End>
 " noremap ]m :<C-u>action MethodDown<CR>
 " noremap [c :<C-u>action VcsShowPrevChangeMarker<CR>
 " noremap ]c :<C-u>action VcsShowNextChangeMarker<CR>
-" noremap [e :<C-u>action GotoPreviousError<CR>
-" noremap ]e :<C-u>action GotoNextError<CR>
+
+
+" SonarLint
+nnoremap <Leader>Sa :action SonarLint.AnalyzeFiles<CR>
+
+" error  config
+noremap [e :<C-u>action GotoPreviousError<CR>
+noremap ]e :<C-u>action GotoNextError<CR>
+noremap <Leader>se :<C-u>action ShowErrorDescription<CR>
 
 " built in search looks better
 noremap / :action Find<CR>
