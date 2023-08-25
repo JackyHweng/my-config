@@ -129,6 +129,7 @@ map s <nop>
 " 随时随地打开配置
 noremap <Leader>rc :e ~/.ideavimrc<CR>
 vnoremap <Leader>rc :e ~/.ideavimrc<CR>
+map R : source ~/.ideavimrc<CR>
 
 " ======== idea operation ==========
 
@@ -138,9 +139,6 @@ noremap <Up> <Nop>
 noremap <Down> <Nop>
 noremap <Left> <Nop>
 noremap <Right> <Nop>
-
-map s <nop>
-map R : source ~/.ideavimrc<CR>
 
 " Redo
 noremap U <C-r>
@@ -312,8 +310,7 @@ nnoremap <c-o> :action Forward<cr>
 nnoremap g<c-o> <c-o>
 nnoremap g<c-i> <c-i>k
 
-
-
+" bookmark config
 noremap <leader>sm :action ShowBookmarks<CR>
 noremap <leader>m0 :action ToggleBookmark0<CR>
 noremap <leader>m1 :action ToggleBookmark1<CR>
@@ -347,8 +344,8 @@ vnoremap <Leader>y :action CopyReference<CR>
 
 
 " translate
-vnoremap <Leader>tr :action $TranslateAndReplaceAction<CR>
-vnoremap <Leader>tl :action $TranslateTextComponent<CR>
+" vnoremap <Leader>tr :action $TranslateAndReplaceAction<CR>
+" vnoremap <Leader>tl :action $TranslateTextComponent<CR>
 " vnoremap <Leader>td :action $TranslateDocumentationAction<CR>
 
 nnoremap <Leader>ef :action RecentFiles<CR>
