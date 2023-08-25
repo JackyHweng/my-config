@@ -248,11 +248,11 @@ nnoremap <Leader>nc :action NewClass<CR>
 
 nnoremap <Leader>np :action NewPythonFile<CR>
 "  means new package
-nnoremap <Leader>nd :action NewDir<CR>
+nnoremap <Leader>mkdir :action NewDir<CR>
 nnoremap <Leader>npi :action NewPackageInfo<CR>
 " 通用的选择新建的文件类型
 nnoremap <Leader>ns :action NewScratchFile<CR>
-nnoremap <Leader>o :action OpenFile<CR>
+" nnoremap <Leader>o :action OpenFile<CR>
 
 
 " view
@@ -292,10 +292,10 @@ noremap <Leader>guc :action Git.Uncommit<CR>
 
 
 " code navigation
-nnoremap <Leader>su :action FindUsages<CR>
+nnoremap <Leader>fu :action FindUsages<CR>
 nnoremap ga :action GotoAction<CR>
 nnoremap gd :action GotoDeclaration<CR>
-nnoremap ;f :action GotoFile<CR>
+nnoremap gf :action GotoFile<CR>
 nnoremap gi :action GotoImplementation<CR>
 nnoremap gs :action GotoSymbol<CR>
 nnoremap <Leader>gt :action GotoTest<CR>
