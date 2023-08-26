@@ -257,7 +257,7 @@ nnoremap <Leader>ns :action NewScratchFile<CR>
 
 " view
 noremap <Leader>ap :action ActivateProjectToolWindow<CR>
-noremap <Leader>ac :action ActivateTerminalToolWindow<CR>
+noremap <Leader>aT :action ActivateTerminalToolWindow<CR>
 noremap <Leader>ad :action ActivateDebugToolWindow<CR>
 noremap <Leader>am :action ActivateMavenToolWindow<CR>
 noremap <Leader>at :action ActivateTODOToolWindow<CR>
@@ -299,6 +299,8 @@ nnoremap gf :action GotoFile<CR>
 nnoremap gi :action GotoImplementation<CR>
 nnoremap gs :action GotoSymbol<CR>
 nnoremap <Leader>gt :action GotoTest<CR>
+
+
 
 nnoremap [m :action MethodUp<cr>
 nnoremap ]m :action MethodDown<cr>
