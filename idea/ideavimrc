@@ -228,7 +228,8 @@ inoremap <C-l> <End>
 
 
 " SonarLint
-nnoremap <Leader>Sa :action SonarLint.AnalyzeFiles<CR>
+noremap <Leader>SA :action SonarLint.AnalyzeFiles<CR>
+noremap <Leader>Sa :action SonarLint.AnalyzeFiles<CR>
 
 " error  config
 noremap [e :<C-u>action GotoPreviousError<CR>
@@ -390,5 +391,4 @@ let g:multi_cursor_use_default_mapping=0
 
 
 nnoremap <leader>e :NERDTree<CR>
-
 
