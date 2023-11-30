@@ -212,8 +212,8 @@ inoremap <C-l> <End>
 " inoremap <C-d> <Delete>
 
 " Tab operation
-" noremap K gt
-" noremap J gT
+noremap K gt
+noremap J gT
 
 
 " ==================================================
