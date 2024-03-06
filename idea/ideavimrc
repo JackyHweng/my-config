@@ -377,16 +377,8 @@ noremap <Leader>mb :action XDebugger.MuteBreakpoints<CR>
 noremap <Leader>si :action StepInto<CR>
 noremap <Leader>so :action StepOver<CR>
 noremap <Leader>tb :action ToggleLineBreakpoint<CR>
-noremap <Leader>ee :action EvaluateExpression<CR>
-
-"  is suitable for me ?
-nnoremap i :ForceStepInto
-nnoremap o :ForceStepOver
-nnoremap p :Stepout
-nnoremap n :action ToggleLineBreakpoint<CR>
-nnoremap m :action ToggleMethodBreakpoint<CR>
-nnoremap <CR> :action Resume<CR>
-nnoremap p :action ShowExecutionPoint<CR>
+noremap <Leader>de :action EvaluateExpression<CR>
+nnoremap <Leader>dr :action Resume<CR>
 
 
 noremap <Leader>cp :action Git.Commit.And.Push.Executor<CR>
