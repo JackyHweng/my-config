@@ -170,7 +170,6 @@ set multiple-cursors
 " you can press J (shift+j) on a line or a selected block of text to join the lines together.
 set idearefactormode=keep
 set ideajoin
-set surround
 
 "[count]["x]gr{motion}
 "[count]["x]grr
@@ -378,6 +377,8 @@ noremap <Leader>mb :action XDebugger.MuteBreakpoints<CR>
 noremap <Leader>si :action StepInto<CR>
 noremap <Leader>so :action StepOver<CR>
 noremap <Leader>tb :action ToggleLineBreakpoint<CR>
+noremap <Leader>ee :action EvaluateExpression<CR>
+
 "  is suitable for me ?
 nnoremap i :ForceStepInto
 nnoremap o :ForceStepOver
