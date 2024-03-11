@@ -287,6 +287,8 @@ noremap <Leader>gf :action Git.Fetch<CR>
 noremap <Leader>gc :action Git.Commit.And.Push.Executor<CR>
 noremap <Leader>gsc :action Git.Squash.Into.Commit<CR>
 noremap <Leader>guc :action Git.Uncommit<CR>
+noremap <Leader>gg :action Git.Log<CR>
+
 
 
 
@@ -376,7 +378,7 @@ noremap sf :action SearchEverywhere<CR>
 noremap <Leader>mb :action XDebugger.MuteBreakpoints<CR>
 noremap <Leader>si :action StepInto<CR>
 noremap <Leader>so :action StepOver<CR>
-noremap <Leader>tb :action ToggleLineBreakpoint<CR>
+noremap <Leader>dtb :action ToggleLineBreakpoint<CR>
 noremap <Leader>de :action EvaluateExpression<CR>
 nnoremap <Leader>dr :action Resume<CR>
 
