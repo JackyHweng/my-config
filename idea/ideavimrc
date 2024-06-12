@@ -388,7 +388,7 @@ let g:multi_cursor_use_default_mapping=0
 
 " project setting
 nnoremap <Leader>ps : action ShowProjectStructureSettings<CR>
-nnoremap <Leader>qp : action CloseProject<CR>
+nnoremap <Leader>cp :action CloseProject<CR>
 
 
 nnoremap <leader>e :NERDTree<CR>
